@@ -1,0 +1,22 @@
+### GET all books
+GET http://localhost:5000/books
+
+### POST new book
+POST http://localhost:5000/books
+Content-Type: application/json
+
+{
+  "title": "Ikigai",
+  "author": "Héctor García",
+  "genre": "Philosophy",
+  "publishedYear": 2016
+}
+
+### PUT update book with id 4
+PUT http://localhost:5000/books/4
+Content-Type: application/json
+
+{
+  "title": "IKIGAI (Updated)",
+  "author": "Héctor & Miralles"
+}
