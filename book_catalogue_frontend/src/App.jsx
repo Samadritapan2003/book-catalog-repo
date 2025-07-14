@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import API from "./services/api"; // ✅ Make sure the path is correct
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -17,10 +17,9 @@ const App = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5004/api/books");
+      const res = await API.get("/books"); // ✅ centralized API
       let data = res.data;
 
-      // Filter
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
         data = data.filter(
@@ -30,7 +29,6 @@ const App = () => {
         );
       }
 
-      // Sort
       data.sort((a, b) =>
         sortOrder === "asc"
           ? a.publishedYear - b.publishedYear
@@ -54,11 +52,11 @@ const App = () => {
   const handleSubmit = async () => {
     try {
       if (editId) {
-        await axios.put(`http://localhost:5004/api/books/${editId}`, form);
+        await API.put(`/books/${editId}`, form); // ✅ centralized API
         showToast("Book updated successfully", "success");
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5004/api/books", form);
+        await API.post("/books", form); // ✅ centralized API
         showToast("Book added successfully", "success");
       }
       setForm({ title: "", author: "", description: "", publishedYear: "" });
@@ -75,7 +73,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5004/api/books/${id}`);
+      await API.delete(`/books/${id}`); // ✅ centralized API
       showToast("Book deleted", "success");
       fetchBooks();
     } catch {
