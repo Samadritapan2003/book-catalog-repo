@@ -1,0 +1,10 @@
+### POST route test
+POST http://localhost:5000/books
+Content-Type: application/json
+
+{
+  "title": "Ikigai",
+  "author": "Héctor García",
+  "genre": "Philosophy",
+  "publishedYear": 2016
+}
