@@ -1,0 +1,29 @@
+### 📘 GET all books
+GET http://localhost:5004/api/books
+
+
+### ➕ POST a new book
+POST http://localhost:5004/api/books
+Content-Type: application/json
+
+{
+  "title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "description": "Timeless lessons on wealth and behavior.",
+  "publishedYear": 2020
+}
+
+
+### 🛠️ Update an existing book (PUT)
+PUT http://localhost:5004/api/books/686488c46b5ebf90a295e586
+Content-Type: application/json
+
+{
+  "title": "The Psychology of Money (Updated)",
+  "author": "Morgan Housel",
+  "description": "Updated description with more insights.",
+  "publishedYear": 2021
+}
+
+### ✅ DELETE a book by ID
+DELETE http://localhost:5004/api/books/686488c46b5ebf90a295e586
