@@ -1,7 +1,8 @@
+// src/pages/Bookshelf.jsx
 import React, { useEffect, useState } from "react";
-import API from "../services/api"; // ✅ Make sure the path is correct
+import API from "../services/api";
 
-const App = () => {
+const Bookshelf = () => {
   const [books, setBooks] = useState([]);
   const [form, setForm] = useState({
     title: "",
@@ -17,7 +18,7 @@ const App = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await API.get("/books"); // ✅ centralized API
+      const res = await API.get("/books");
       let data = res.data;
 
       if (searchQuery) {
@@ -52,11 +53,11 @@ const App = () => {
   const handleSubmit = async () => {
     try {
       if (editId) {
-        await API.put(`/books/${editId}`, form); // ✅ centralized API
+        await API.put(`/books/${editId}`, form);
         showToast("Book updated successfully", "success");
         setEditId(null);
       } else {
-        await API.post("/books", form); // ✅ centralized API
+        await API.post("/books", form);
         showToast("Book added successfully", "success");
       }
       setForm({ title: "", author: "", description: "", publishedYear: "" });
@@ -73,7 +74,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await API.delete(`/books/${id}`); // ✅ centralized API
+      await API.delete(`/books/${id}`);
       showToast("Book deleted", "success");
       fetchBooks();
     } catch {
@@ -219,4 +220,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Bookshelf;
