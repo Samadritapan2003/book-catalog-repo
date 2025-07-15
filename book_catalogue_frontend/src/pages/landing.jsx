@@ -1,33 +1,46 @@
-// src/pages/Landing.jsx
+import React from "react";
 import { Link } from "react-router-dom";
-import bookshelfImage from "../assets/bookshelf.png";
-
-<img src={bookshelfImage} alt="Bookshelf" />
 
 const Landing = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-gradient-to-r from-[#f2e8cf] to-[#dfd3c3]">
-      {/* Text Section */}
-      <div className="text-center md:text-left md:w-1/2 space-y-6">
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
-          Your personal library, just smarter —{" "}
-          <span className="text-purple-600">Shelfy</span>
+    <div
+      className="min-h-screen flex flex-col md:flex-row items-center justify-between px-8 py-10"
+      style={{
+        backgroundColor: "#ffffff",
+        fontFamily: "'Poppins', sans-serif",
+        color: "#000000",
+      }}
+    >
+      {/* Left Side - Text & Link */}
+      <div className="md:w-1/2 space-y-6 text-center md:text-left">
+        <h1 className="text-4xl font-semibold">
+          Your personal library, just smarter — <strong>Shelfy</strong>
         </h1>
         <Link
           to="/bookshelf"
-          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+          className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-5 rounded transition"
         >
           📚 View the Shelves
         </Link>
       </div>
 
-      {/* Image Section */}
-      <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
+      {/* Right Side - Image */}
+      <div className="md:w-1/2 mt-10 md:mt-0 flex flex-col items-center">
         <img
-          src={bookshelfImage}
+          src="https://cdn-icons-png.flaticon.com/512/3106/3106781.png"
           alt="Bookshelf illustration"
-          className="w-64 md:w-96 max-w-full object-contain"
+          className="w-80 h-auto"
         />
+        <p className="text-xs mt-4 text-gray-500 text-center">
+          <a
+            href="https://www.flaticon.com/free-icons/bookshelf"
+            title="bookshelf icons"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Bookshelf icons created by prettycons - Flaticon
+          </a>
+        </p>
       </div>
     </div>
   );
