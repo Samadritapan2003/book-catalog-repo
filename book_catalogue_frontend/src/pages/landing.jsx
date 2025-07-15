@@ -2,29 +2,31 @@
 import { Link } from "react-router-dom";
 import bookshelfImage from "../assets/bookshelf.png";
 
+<img src={bookshelfImage} alt="Bookshelf" />
+
 const Landing = () => {
   return (
-    <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-12 py-10 bg-gradient-to-br from-[#fceabb] to-[#e3f0d3]">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-gradient-to-r from-[#f2e8cf] to-[#dfd3c3]">
       {/* Text Section */}
       <div className="text-center md:text-left md:w-1/2 space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-snug">
-          your personal library,<br />
-          just smarter
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
+          Your personal library, just smarter —{" "}
+          <span className="text-purple-600">Shelfy</span>
         </h1>
         <Link
           to="/bookshelf"
-          className="inline-block text-lg text-blue-700 font-semibold hover:underline transition"
+          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
         >
-          View the shelves →
+          📚 View the Shelves
         </Link>
       </div>
 
       {/* Image Section */}
-      <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+      <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
         <img
           src={bookshelfImage}
           alt="Bookshelf illustration"
-          className="w-64 md:w-80 object-contain drop-shadow-xl"
+          className="w-64 md:w-96 max-w-full object-contain"
         />
       </div>
     </div>
