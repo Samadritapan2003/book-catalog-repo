@@ -1,40 +1,30 @@
 // src/pages/Landing.jsx
-import React from "react";
 import { Link } from "react-router-dom";
-import bookshelf from "../assets/bookshelf.png"; // ✅ image from assets
+import bookshelfImage from "../assets/bookshelf.png";
 
 const Landing = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        padding: "2rem",
-        background: "linear-gradient(to right, #f2e8cf, #dfd3c3)",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ maxWidth: "50%" }}>
-        <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem", color: "#3e3e3e" }}>
-          Your personal library, just smarter — <strong>Shelfy</strong>
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-gradient-to-r from-[#f2e8cf] to-[#dfd3c3]">
+      {/* Left Text Area */}
+      <div className="text-center md:text-left md:w-1/2 space-y-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
+          Your personal library, just smarter — <span className="text-purple-600">Shelfy</span>
         </h1>
         <Link
           to="/bookshelf"
-          style={{
-            padding: "0.7rem 1.5rem",
-            backgroundColor: "#6c63ff",
-            color: "white",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
+          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
         >
           📚 View the Shelves
         </Link>
       </div>
-      <div>
-        <img src={bookshelf} alt="Bookshelf" style={{ width: "350px" }} />
+
+      {/* Right Image */}
+      <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+        <img
+          src={bookshelfImage}
+          alt="Bookshelf"
+          className="w-64 md:w-96 max-w-full"
+        />
       </div>
     </div>
   );
