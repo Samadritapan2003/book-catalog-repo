@@ -5,10 +5,11 @@ import bookshelfImage from "../assets/bookshelf.png";
 const Landing = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-gradient-to-r from-[#f2e8cf] to-[#dfd3c3]">
-      {/* Left Text Area */}
+      {/* Text Section */}
       <div className="text-center md:text-left md:w-1/2 space-y-6">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
-          Your personal library, just smarter — <span className="text-purple-600">Shelfy</span>
+          Your personal library, just smarter —{" "}
+          <span className="text-purple-600">Shelfy</span>
         </h1>
         <Link
           to="/bookshelf"
@@ -18,12 +19,12 @@ const Landing = () => {
         </Link>
       </div>
 
-      {/* Right Image */}
-      <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+      {/* Image Section */}
+      <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
         <img
           src={bookshelfImage}
-          alt="Bookshelf"
-          className="w-64 md:w-96 max-w-full"
+          alt="Bookshelf illustration"
+          className="w-64 md:w-96 max-w-full object-contain"
         />
       </div>
     </div>
